@@ -8,11 +8,8 @@ public class connect
 	{
 		try
 		{
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
-			// Establishing Connection
-			Connection con = DriverManager.getConnection(
-			"jdbc:oracle:thin:@localhost:1521:orcl", "login1", "pwd1");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Expensedb", "root", "oracle");
 
 			if (con != null)			
 				System.out.println("Connected");		
