@@ -14,7 +14,7 @@ public class dbc {
     static String url = "jdbc:mysql://localhost:3306/"+ databaseName;
     static String username = "root";
     static String password = "oracle";
-    public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+    public static void ShowExpenses()  throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{
         Class.forName("com.mysql.jdbc.Driver").newInstance(); //making instance of the class
         connection=DriverManager.getConnection(url, username, password); //Connecting the SQL server
         PreparedStatement p = connection.prepareStatement("select * from Expenses;");
@@ -27,5 +27,8 @@ public class dbc {
             int Amount= rs.getInt("Amt");
             System.out.println(id+"\t\t"+name+"\t\t"+Amount);
         }
+    }
+    public static void main(String[] args)  throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+        ShowExpenses();
     }
 }
