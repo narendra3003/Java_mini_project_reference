@@ -4,11 +4,11 @@
 import java.sql.*;//importing sql jar file
 public class dbcBasic{
     //connection variables specific for a DB and password
-    static Connection connection = null;
-    static String databaseName ="Expensedb";
-    static String url = "jdbc:mysql://localhost:3306/"+ databaseName;
-    static String username = "root";
-    static String password = "oracle";
+    // static Connection connection = null;
+    // static String databaseName ="Expensedb";
+    // static String url = "jdbc:mysql://localhost:3306/"+ databaseName;
+    // static String username = "root";
+    // static String password = "oracle";
     
     
     public static void checkLogin(String name, String pass) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
@@ -41,9 +41,9 @@ public class dbcBasic{
 			System.out.println(e);
 		}
     }
-    public static void instrting(String id, String name, String amt) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
-        Class.forName("com.mysql.jdbc.Driver").newInstance();
-        connection=DriverManager.getConnection(url, username, password);
+    public static void inserting(String id, String name, String amt) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+        Class.forName("com.mysql.jdbc.Driver");
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Expensedb", "root", "oracle");
         PreparedStatement ps = connection.prepareStatement("insert into Expenses values('"+id+"', '"+name+"', '"+amt+"');");
         int status = ps.executeUpdate();//to execute that statement
         if(status!=0){ 
@@ -52,7 +52,7 @@ public class dbcBasic{
         }
     }
     public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
-        // instrting("101", "PC", "60000");
-        checkLogin("Narendra", "12345");
+        inserting("107", "iphone", "150000");
+        // checkLogin("Narendra", "2345");
     }
 }

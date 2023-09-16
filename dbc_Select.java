@@ -2,7 +2,7 @@
 // selecting from Database
 import java.sql.*;
 
-public class Z_Select
+public class dbc_Select
 {
 	public static void PrintSelected(String id){
 		try

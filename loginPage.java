@@ -19,7 +19,7 @@ public class loginPage {
         // Stage mainWindow = (Stage) tfEmail.getScene().getWindow();
         String email = tfEmail.getText();
         String pass = tfPass.getText();
-        dbcBasic.checkLogin(email, pass);
+        AlertConnector.checkLogin1(email, pass);
     }
 
 }
