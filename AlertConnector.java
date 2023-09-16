@@ -8,6 +8,8 @@ public class AlertConnector {
 	    {
 	    	// set alert type
 	    	a.setAlertType(AlertType.ERROR);
+            // content to show
+            a.setContentText("Invalid Login");
 	    	// show the dialog
 	    	a.show();
 	    }
