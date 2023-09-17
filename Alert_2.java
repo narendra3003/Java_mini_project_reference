@@ -125,7 +125,7 @@ public class Alert_2 extends Application {
 		r.getChildren().add(b4);
 
 		// create a scene
-		Scene sc = new Scene(r, 200, 200);
+		Scene sc = new Scene(r, 800, 200);
 
 		// set the scene
 		s.setScene(sc);
