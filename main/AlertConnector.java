@@ -5,6 +5,7 @@ import javafx.scene.control.Alert.AlertType;
 
 public class AlertConnector {
     static Alert a = new Alert(AlertType.NONE);
+	// alert function for invalid login
     public static void handle()
 	    {
 	    	// set alert type
@@ -15,6 +16,7 @@ public class AlertConnector {
 	    	a.show();
 	    }
     public static boolean checkLogin1(String name, String pass) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+		// connecting database
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Expensedb", "root", "oracle");
 		Statement stmt = con.createStatement();

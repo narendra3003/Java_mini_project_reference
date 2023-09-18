@@ -9,14 +9,16 @@ import javafx.stage.Stage;
 public class App extends Application{
     @Override
     public void start(Stage primaryStage) throws IOException{
+        //to open the starting page
         Parent root;
-        root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
         Stage stage = new Stage();
         stage.setWidth(1270);
         stage.setHeight(720);
         stage.setResizable(false);
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Login Page");
+        //title of the app
+        primaryStage.setTitle("Expense Tracker");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

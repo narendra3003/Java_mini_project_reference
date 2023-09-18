@@ -16,20 +16,21 @@ public class scene_controller extends App{
     private Stage stage;
     private Scene scene;
     private Parent root;
-    public void switchToScene1(ActionEvent event) throws IOException{
+    public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToScene2(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("finaltransaction.fxml"));
+    public void switchToTransaction(ActionEvent event) throws IOException{        // to switch the scene to transaction
+        root = FXMLLoader.load(getClass().getResource("finalTransaction.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
+    //inputs of login page
     @FXML
     private TextField tfEmail;
 
@@ -38,12 +39,12 @@ public class scene_controller extends App{
 
     @FXML
     void btnClicked(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
-        // Stage mainWindow = (Stage) tfEmail.getScene().getWindow();
+        // checks the login is valid or not
         String email = tfEmail.getText();
         String pass = tfPass.getText();
         System.out.println(AlertConnector.checkLogin1(email, pass));
         if(AlertConnector.checkLogin1(email, pass)){
-            switchToScene1(event);
+            switchToDashBoard(event);
             System.out.println("true");
         }
     }
