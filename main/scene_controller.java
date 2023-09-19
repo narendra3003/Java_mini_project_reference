@@ -30,6 +30,20 @@ public class scene_controller extends App{
         stage.setScene(scene);
         stage.show();
     }
+    public void switchToAddTrans(ActionEvent event) throws IOException{        // to switch the scene to add transaction
+        root = FXMLLoader.load(getClass().getResource("finalAddTransaction.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToEditTrans(ActionEvent event) throws IOException{        // to switch the scene to edit transaction
+        root = FXMLLoader.load(getClass().getResource("finalEditTrans.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
     //inputs of login page
     @FXML
     private TextField tfEmail;

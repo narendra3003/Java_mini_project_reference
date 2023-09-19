@@ -39,11 +39,6 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Label>
-                        <Button alignment="CENTER" layoutX="22.0" layoutY="66.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="57.0" prefWidth="130.0" style="-fx-background-color: #6a5acd;" text="MENU" textFill="#dbdbdb" underline="true">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
                         <Button alignment="CENTER" layoutX="13.0" layoutY="378.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
@@ -68,6 +63,11 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
+                        <Label alignment="CENTER" layoutX="28.0" layoutY="91.0" prefHeight="47.0" prefWidth="130.0" text="MENU" textFill="#dbdbdb" underline="true">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -131,11 +131,21 @@
                                           <Font name="Dubai Regular" size="19.0" />
                                        </font>
                                     </Button>
-                                    <Button alignment="CENTER" layoutX="824.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
+                                    <Button alignment="CENTER" layoutX="824.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToEditTrans" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
                                        <font>
                                           <Font name="Dubai Regular" size="19.0" />
                                        </font>
                                     </Button>
+                                    <Button layoutX="845.0" layoutY="479.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" textFill="WHITE">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="860.0" layoutY="467.0" prefHeight="47.0" prefWidth="35.0" text="+" textFill="WHITE">
+                                       <font>
+                                          <Font name="Dubai Bold" size="49.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </AnchorPane>
                            </items>
