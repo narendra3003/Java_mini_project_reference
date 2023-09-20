@@ -18,11 +18,11 @@ public class AlertConnector {
     public static boolean checkLogin1(String name, String pass) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
 		// connecting database
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Expensedb", "root", "oracle");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "oracle");
 		Statement stmt = con.createStatement();
 		
 		// SELECT query
-		String q1 = "select password from loginTable WHERE name = '" + name + "';";
+		String q1 = "select password from user WHERE username = '" + name + "';";
 		ResultSet rs = stmt.executeQuery(q1);
 		if (rs.next())
 		{
