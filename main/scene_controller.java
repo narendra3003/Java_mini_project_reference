@@ -1,7 +1,7 @@
 package main;
+
 import java.io.IOException;
 import java.sql.SQLException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
-public class scene_controller extends App{
+public class scene_controller {
     private Stage stage;
     private Scene scene;
     private Parent root;

@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.scene_controller">
    <children>
       <SplitPane dividerPositions="0.5" layoutX="128.0" layoutY="128.0" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -29,7 +28,7 @@
                   </Label>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #6a5acd;">
+          <AnchorPane fx:id="tfUser" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #6a5acd;">
                <children>
                   <Label layoutX="466.0" layoutY="163.0" text="Login" textFill="WHITE" underline="true">
                      <font>
@@ -46,17 +45,17 @@
                         <Font name="Dubai Regular" size="22.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="464.0" layoutY="268.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
+                  <TextField fx:id="tfEmail" layoutX="464.0" layoutY="268.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
                      <font>
                         <Font name="Dubai Regular" size="14.0" />
                      </font>
                   </TextField>
-                  <PasswordField layoutX="466.0" layoutY="356.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
+                  <PasswordField fx:id="tfPass" layoutX="466.0" layoutY="356.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
                      <font>
                         <Font name="Dubai Regular" size="14.0" />
                      </font>
                   </PasswordField>
-                  <Button layoutX="466.0" layoutY="436.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" style="-fx-background-color: white;" text="Login" textFill="SLATEBLUE">
+                  <Button layoutX="466.0" layoutY="436.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="35.0" prefWidth="81.0" style="-fx-background-color: white;" text="Login" textFill="SLATEBLUE">
                      <font>
                         <Font name="Dubai Bold" size="16.0" />
                      </font>

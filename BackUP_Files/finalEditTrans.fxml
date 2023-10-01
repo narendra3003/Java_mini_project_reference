@@ -31,17 +31,12 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label alignment="CENTER" layoutX="33.0" layoutY="64.0" prefHeight="47.0" prefWidth="88.0" text="MENU" textFill="#dbdbdb" underline="true">
+                        <Label alignment="CENTER" layoutX="39.0" layoutY="81.0" prefHeight="47.0" prefWidth="88.0" text="MENU" textFill="#dbdbdb" underline="true">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Label>
                         <Button alignment="CENTER" layoutX="21.0" layoutY="305.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="20.0" layoutY="111.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="#dbdbdb" underline="true">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
@@ -65,6 +60,11 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
+                        <Label alignment="CENTER" layoutX="45.0" layoutY="128.0" prefHeight="47.0" prefWidth="132.0" text="Transaction" textFill="#dbdbdb" underline="true">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </children>

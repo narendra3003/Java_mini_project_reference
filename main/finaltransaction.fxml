@@ -14,13 +14,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.scene_controller">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Trans_Scene">
    <children>
       <AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <SplitPane dividerPositions="0.1971608832807571" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <SplitPane dividerPositions="0.24053627760252366" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <items>
-                  <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="300.0" prefHeight="160.0" prefWidth="300.0" style="-fx-background-color: #6a5acd;">
+                  <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0" style="-fx-background-color: #6a5acd;">
                      <children>
                         <Button layoutX="42.0" layoutY="17.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="65.0" style="-fx-background-color: #6a5acd;" textFill="WHITE" underline="true">
                            <font>
@@ -85,12 +85,12 @@
                               </AnchorPane>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="590.0" prefWidth="958.0">
                                  <children>
-                                    <TableView layoutX="9.0" layoutY="138.0" prefHeight="443.0" prefWidth="787.0">
+                                    <TableView fx:id="Trans_table" layoutX="9.0" layoutY="138.0" prefHeight="443.0" prefWidth="787.0">
                                       <columns>
-                                        <TableColumn prefWidth="187.3334093093872" text="Type" />
-                                        <TableColumn prefWidth="175.99998474121094" text="Amount" />
-                                          <TableColumn prefWidth="266.6667175292969" text="Category" />
-                                          <TableColumn prefWidth="154.6666259765625" text="Date" />
+                                        <TableColumn fx:id="Trans_type" prefWidth="187.3334093093872" text="Type" />
+                                        <TableColumn fx:id="Trans_amt" prefWidth="175.99998474121094" text="Amount" />
+                                          <TableColumn fx:id="Trans_categ" prefWidth="266.6667175292969" text="Category" />
+                                          <TableColumn fx:id="Trans_date" prefWidth="154.6666259765625" text="Date" />
                                       </columns>
                                     </TableView>
                                     <Label layoutX="45.0" layoutY="27.0" text="Search :" textFill="SLATEBLUE">
@@ -141,7 +141,7 @@
                                           <Font size="24.0" />
                                        </font>
                                     </Button>
-                                    <Label layoutX="860.0" layoutY="467.0" prefHeight="47.0" prefWidth="35.0" text="+" textFill="WHITE">
+                                    <Label layoutX="865.0" layoutY="467.0" prefHeight="47.0" prefWidth="35.0" text="+" textFill="WHITE">
                                        <font>
                                           <Font name="Dubai Bold" size="49.0" />
                                        </font>

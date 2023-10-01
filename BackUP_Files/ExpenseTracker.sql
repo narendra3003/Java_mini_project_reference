@@ -2,12 +2,12 @@ create database Exp_Tracker;
 use Exp_Tracker;
 
 create table User(User_id int(2)primary key,Username varchar(20),Password varchar(20),Profile_info varchar(50));
-insert into User values(101,'John','john@178','Student studying in SE'),(102,'Joel','joel@123','19 year old');
+insert into User values(101,'Narendra','Tejas30','Student studying in SE'),(102,'Sanchita','Sanchi41','19 year old');
 
 create table Expense_category(Ecategory_id int(2)primary key,Ecategory_name varchar(20),user_id int (2),foreign key (user_id) references User(user_id));
-insert into Expense_category values(301,'Joe','101'),(302,'Jane','102');
+insert into Expense_category values(301,'education','101'),(302,'Transportation','102');
 
-create table transactions(transaction_id int(2),description varchar(20),transactiondate DATE,amount int(4),Ecategory_id int(2),user_id int(2),foreign key (Ecategory_id) references Expense_category(Ecategory_id),foreign key (user_id) references User(user_id));
+create table transactions(transaction_id int(5),description varchar(20),transactiondate DATE,amount int(4),Ecategory_id int(2),user_id int(2),foreign key (Ecategory_id) references Expense_category(Ecategory_id),foreign key (user_id) references User(user_id));
 insert into transactions values(401,'transaction details','2023-08-17',40000,301,101),(402,'transaction details','2023-08-18',20000,302,102);
 
 create table Transaction_category(category_id int(2),categoryname varchar(20),description varchar(50));
