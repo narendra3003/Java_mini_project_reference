@@ -14,13 +14,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Trans_Scene">
    <children>
       <AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <SplitPane dividerPositions="0.1971608832807571" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <SplitPane dividerPositions="0.24053627760252366" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <items>
-                  <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="300.0" prefHeight="160.0" prefWidth="300.0" style="-fx-background-color: #6a5acd;">
+                  <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0" style="-fx-background-color: #6a5acd;">
                      <children>
                         <Button layoutX="42.0" layoutY="17.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="65.0" style="-fx-background-color: #6a5acd;" textFill="WHITE" underline="true">
                            <font>
@@ -34,17 +34,12 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label alignment="CENTER" layoutX="43.0" layoutY="74.0" prefHeight="47.0" prefWidth="88.0" text="MENU" textFill="#dbdbdb" underline="true">
+                        <Label alignment="CENTER" layoutX="50.0" layoutY="138.0" prefHeight="47.0" prefWidth="130.0" text="Transaction" textFill="#dbdbdb" underline="true">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Label>
-                        <Button alignment="CENTER" layoutX="30.0" layoutY="121.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="#dbdbdb" underline="true">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="13.0" layoutY="378.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="13.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
@@ -58,16 +53,21 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </MenuButton>
-                        <Button alignment="CENTER" layoutX="34.0" layoutY="185.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="34.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" layoutX="28.0" layoutY="315.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="130.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="28.0" layoutY="315.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="130.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
+                        <Label alignment="CENTER" layoutX="28.0" layoutY="91.0" prefHeight="47.0" prefWidth="130.0" text="MENU" textFill="#dbdbdb" underline="true">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -85,12 +85,12 @@
                               </AnchorPane>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="590.0" prefWidth="958.0">
                                  <children>
-                                    <TableView layoutX="9.0" layoutY="138.0" prefHeight="443.0" prefWidth="787.0">
+                                    <TableView fx:id="Trans_table" layoutX="9.0" layoutY="138.0" prefHeight="443.0" prefWidth="787.0">
                                       <columns>
-                                        <TableColumn prefWidth="187.3334093093872" text="Type" />
-                                        <TableColumn prefWidth="175.99998474121094" text="Amount" />
-                                          <TableColumn prefWidth="266.6667175292969" text="Category" />
-                                          <TableColumn prefWidth="154.6666259765625" text="Date" />
+                                        <TableColumn fx:id="Trans_type" prefWidth="187.3334093093872" text="Type" />
+                                        <TableColumn fx:id="Trans_amt" prefWidth="175.99998474121094" text="Amount" />
+                                          <TableColumn fx:id="Trans_categ" prefWidth="266.6667175292969" text="Category" />
+                                          <TableColumn fx:id="Trans_date" prefWidth="154.6666259765625" text="Date" />
                                       </columns>
                                     </TableView>
                                     <Label layoutX="45.0" layoutY="27.0" text="Search :" textFill="SLATEBLUE">
@@ -131,11 +131,21 @@
                                           <Font name="Dubai Regular" size="19.0" />
                                        </font>
                                     </Button>
-                                    <Button alignment="CENTER" layoutX="824.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
+                                    <Button alignment="CENTER" layoutX="824.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToEditTrans" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
                                        <font>
                                           <Font name="Dubai Regular" size="19.0" />
                                        </font>
                                     </Button>
+                                    <Button layoutX="845.0" layoutY="479.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" textFill="WHITE">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="865.0" layoutY="467.0" prefHeight="47.0" prefWidth="35.0" text="+" textFill="WHITE">
+                                       <font>
+                                          <Font name="Dubai Bold" size="49.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </AnchorPane>
                            </items>

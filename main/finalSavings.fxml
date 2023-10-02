@@ -128,7 +128,7 @@
                             <TableColumn prefWidth="321.6000061035156" text="Savings" />
                           </columns>
                         </TableView>
-                        <Button alignment="CENTER" layoutX="730.0" layoutY="619.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToEditTrans" prefHeight="57.0" prefWidth="165.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Add Saving" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="730.0" layoutY="619.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToAddSave" prefHeight="57.0" prefWidth="165.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Add Saving" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="19.0" />
                            </font>

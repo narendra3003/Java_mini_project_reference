@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.scene_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.AddTrans_scene">
    <children>
       <SplitPane dividerPositions="0.23186119873817035" layoutX="92.0" layoutY="98.0" maxWidth="0.0" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -35,7 +35,7 @@
                         <Font name="Dubai Regular" size="26.0" />
                      </font>
                   </Label>
-                  <Button alignment="CENTER" layoutX="37.0" layoutY="314.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="117.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+                  <Button alignment="CENTER" layoutX="37.0" layoutY="314.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="117.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
                      <font>
                         <Font name="Dubai Regular" size="26.0" />
                      </font>
@@ -59,7 +59,7 @@
                         <Font name="Dubai Regular" size="26.0" />
                      </font>
                   </MenuButton>
-                  <Button alignment="CENTER" layoutX="34.0" layoutY="185.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
+                  <Button alignment="CENTER" layoutX="34.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
                      <font>
                         <Font name="Dubai Regular" size="26.0" />
                      </font>
@@ -128,6 +128,11 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
+                        <Button layoutX="686.0" layoutY="643.0" mnemonicParsing="false" onAction="#switchToCateg" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Add New Category" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="19.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                </children>

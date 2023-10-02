@@ -67,7 +67,6 @@ public class Trans_Scene implements Initializable{
         Trans_table.setItems(list);
     }
     public void switchToAddTrans(ActionEvent event) throws IOException{        // to switch the scene to add transaction
-        values.clear();
         root = FXMLLoader.load(getClass().getResource("finalAddTransaction.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -75,7 +74,6 @@ public class Trans_Scene implements Initializable{
         stage.show();
     }
     public void switchToEditTrans(ActionEvent event) throws IOException{        // to switch the scene to edit transaction
-        values.clear();
         root = FXMLLoader.load(getClass().getResource("finalEditTrans.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -108,6 +106,7 @@ public class Trans_Scene implements Initializable{
     }
     private static void giveTrans() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
 		// connecting database
+        values.clear();
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "oracle");
 		
