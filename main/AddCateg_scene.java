@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AddTrans_scene {
+public class AddCateg_scene {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -41,14 +41,6 @@ public class AddTrans_scene {
     @FXML
     public void switchToSave(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("finalSavings.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
-    public void switchToCateg(ActionEvent event) throws IOException{        // to switch the scene to transaction
-        root = FXMLLoader.load(getClass().getResource("finalAddCategory.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

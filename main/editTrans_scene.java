@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AddTrans_scene {
+public class editTrans_scene {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -55,3 +55,4 @@ public class AddTrans_scene {
         stage.show();
     }
 }
+

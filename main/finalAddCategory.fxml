@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.editTrans_scene">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.AddCateg_scene">
    <children>
       <SplitPane dividerPositions="0.23186119873817035" layoutX="92.0" layoutY="98.0" maxWidth="0.0" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -31,12 +31,17 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label alignment="CENTER" layoutX="39.0" layoutY="81.0" prefHeight="47.0" prefWidth="88.0" text="MENU" textFill="#dbdbdb" underline="true">
+                        <Label alignment="CENTER" layoutX="33.0" layoutY="64.0" prefHeight="47.0" prefWidth="88.0" text="MENU" textFill="#dbdbdb" underline="true">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Label>
                         <Button alignment="CENTER" layoutX="21.0" layoutY="305.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="20.0" layoutY="111.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="64.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="#dbdbdb" underline="true">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
@@ -60,11 +65,6 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" layoutX="21.0" layoutY="128.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: #6a5acd;" text="Transaction" textFill="#dbdbdb" underline="true">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
                      </children>
                   </AnchorPane>
                </children>
@@ -73,63 +73,44 @@
                <children>
                   <AnchorPane prefHeight="560.0" prefWidth="966.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Button layoutX="682.0" layoutY="600.0" mnemonicParsing="false" onAction="#switchToCateg" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10; -fx-background-radius: 10;" text="Add new Category" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="19.0" />
-                           </font>
-                        </Button>
-                        <Label layoutX="363.0" layoutY="184.0" prefHeight="41.0" prefWidth="56.0" text="Type :" textFill="SLATEBLUE">
+                        <Label layoutX="284.0" layoutY="162.0" text="Category Name :" textFill="SLATEBLUE">
                            <font>
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
                         </Label>
-                        <Label layoutX="330.0" layoutY="263.0" text="Category :" textFill="SLATEBLUE">
-                           <font>
-                              <Font name="Dubai Regular" size="22.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="337.0" layoutY="363.0" prefHeight="41.0" prefWidth="91.0" text="Amount :" textFill="SLATEBLUE">
-                           <font>
-                              <Font name="Dubai Regular" size="22.0" />
-                           </font>
-                        </Label>
-                        <Button layoutX="356.0" layoutY="467.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Save edits" textFill="WHITE">
+                        <Button layoutX="330.0" layoutY="456.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text=" ADD Category" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="24.0" />
                            </font>
                         </Button>
-                        <MenuButton layoutX="465.0" layoutY="181.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Select" textFill="WHITE">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Income" />
-                              <MenuItem mnemonicParsing="false" text="Expense" />
-                           </items>
+                        <TextField layoutX="450.0" layoutY="159.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="203.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
                            <font>
-                              <Font name="Dubai Regular" size="18.0" />
-                           </font>
-                        </MenuButton>
-                        <TextField layoutX="465.0" layoutY="260.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
-                           <font>
-                              <Font name="Dubai Regular" size="22.0" />
-                           </font>
-                        </TextField>
-                        <TextField layoutX="465.0" layoutY="360.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
-                           <font>
-                              <Font name="Dubai Regular" size="22.0" />
+                              <Font size="22.0" />
                            </font>
                         </TextField>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="118.0" prefWidth="1108.0">
                            <children>
                               <AnchorPane layoutX="-174.0" layoutY="-83.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label layoutX="328.0" layoutY="30.0" prefHeight="49.0" prefWidth="304.0" text="Edit Transaction" textFill="WHITE">
+                                    <Label alignment="CENTER" layoutX="315.0" layoutY="28.0" prefHeight="49.0" prefWidth="304.0" text="Add Category" textFill="WHITE">
                                        <font>
-                                          <Font size="40.0" />
+                                          <Font name="Dubai Regular" size="40.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
+                        <Label layoutX="284.0" layoutY="250.0" text="Description :" textFill="SLATEBLUE">
+                           <font>
+                              <Font name="Dubai Regular" size="22.0" />
+                           </font>
+                        </Label>
+                        <TextField alignment="TOP_LEFT" layoutX="450.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="144.0" prefWidth="304.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10;">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                        </TextField>
                      </children>
                   </AnchorPane>
                </children>

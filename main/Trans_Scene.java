@@ -82,6 +82,30 @@ public class Trans_Scene implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    public void switchToBL(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("finalBorrow&Lend.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    public void switchToBudget(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("finalBudget.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    public void switchToSave(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("finalSavings.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
     private static void giveTrans() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
 		// connecting database
 		Class.forName("com.mysql.jdbc.Driver");

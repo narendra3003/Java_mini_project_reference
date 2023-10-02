@@ -39,7 +39,7 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Label>
-                        <Button alignment="CENTER" layoutX="13.0" layoutY="378.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="13.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
@@ -53,12 +53,12 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </MenuButton>
-                        <Button alignment="CENTER" layoutX="34.0" layoutY="185.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="34.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" layoutX="28.0" layoutY="315.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="130.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="28.0" layoutY="315.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="130.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
