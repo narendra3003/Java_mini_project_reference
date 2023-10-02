@@ -44,6 +44,30 @@ public class scene_controller {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    public void switchToBL(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("finalBorrow&Lend.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    public void switchToBudget(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("finalBudget.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    public void switchToSave(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("finalSavings.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
     //inputs of login page
     @FXML
     private TextField tfEmail;
