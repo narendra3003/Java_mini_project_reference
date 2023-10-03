@@ -47,14 +47,11 @@ public class Saving_scene implements Initializable{
         ObservableList<saving> save_list;
         try {
             giveSave();
-            System.out.println("out of func");
             save_list = FXCollections.observableArrayList(save_values);
-            System.out.println("Runned budget");
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException | IOException e) {
             System.out.println("error occured ="+e);
             save_list = FXCollections.observableArrayList(
-                new saving("Expense", 50000),
-                new saving("income", 2000)
+                new saving("Error", 0)
             );
         }
         saving_table.setItems(save_list);
@@ -65,15 +62,14 @@ public class Saving_scene implements Initializable{
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "oracle");
 		
-        PreparedStatement p = con.prepareStatement("select * from savings;");
+        PreparedStatement p = con.prepareStatement("select * from savings where user_id="+AlertConnector.user+";");
         ResultSet rs = p.executeQuery();
         System.out.println("printing now");
         while(rs.next()){
-			String categ = rs.getString("saving_id");
+            String categ = rs.getString("savingsdate");
             int saving = rs.getInt("amount");
             System.out.println(saving+"\t\t"+categ);
             save_values.add(new saving(categ, saving));
-            System.out.println("obj added");
         }
 		con.close();
     }

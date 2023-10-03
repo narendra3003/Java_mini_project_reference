@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class AlertConnector {
+	public static int user;
     static Alert a = new Alert(AlertType.NONE);
 	// alert function for invalid login
     public static void handle()
@@ -23,12 +24,13 @@ public class AlertConnector {
 		Statement stmt = con.createStatement();
 		
 		// SELECT query
-		String q1 = "select password from user WHERE username = '" + name + "';";
+		String q1 = "select user_id, password from user WHERE username = '" + name + "';";
 		ResultSet rs = stmt.executeQuery(q1);
 		if (rs.next())
 		{
 			if(pass.compareTo(rs.getString("password"))==0){
                 System.out.println("Valid login");
+				user= rs.getInt("user_id");
 				return true;
             }
             else{

@@ -53,15 +53,11 @@ public class Trans_Scene implements Initializable{
         ObservableList<Transactions> list;
         try {
             giveTrans();
-            System.out.println("out of func");
-            // values.add(new Transactions("Expense", 2000, "Transportation", "22-08-23"));
-            // values.add(new Transactions("income", 10000, "Job", "1-08-23"));
             list = FXCollections.observableArrayList(values);
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
             System.out.println("error occured ="+e);
             list = FXCollections.observableArrayList(
-                new Transactions("Expense", 2000, "Transportation", "22-08-23"),
-                new Transactions("income", 10000, "Job", "1-08-23")
+                new Transactions("Error", 0, "Transportation", "22-08-23")
             ); 
         }
         Trans_table.setItems(list);
@@ -110,7 +106,7 @@ public class Trans_Scene implements Initializable{
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "oracle");
 		
-        PreparedStatement p = con.prepareStatement("select * from transactions;");
+        PreparedStatement p = con.prepareStatement("select * from transactions where user_id="+AlertConnector.user+";");
         ResultSet rs = p.executeQuery();
         System.out.println("printing now");
         while(rs.next()){
@@ -120,7 +116,6 @@ public class Trans_Scene implements Initializable{
 			String categ = rs.getString("categoryname");
             System.out.println(type+"\t\t"+date+"\t\t"+amt+"\t\t"+categ);
             values.add(new Transactions(type, amt, categ, date));
-            System.out.println("obj added");
         }
 		con.close();
     }

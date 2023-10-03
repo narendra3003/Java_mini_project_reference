@@ -46,16 +46,11 @@ public class budget_scene implements Initializable{
         ObservableList<Budget> Bud_list;
         try {
             giveBudget();
-            System.out.println("out of func");
-            // Bud_values.add(new Budget("Expense", 50000));
-            // Bud_values.add(new Budget("income", 2000));
             Bud_list = FXCollections.observableArrayList(Bud_values);
-            System.out.println("Runned budget");
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException | IOException e) {
             System.out.println("error occured ="+e);
             Bud_list = FXCollections.observableArrayList(
-                new Budget("Expense", 50000),
-                new Budget("income", 2000)
+                new Budget("Error", 0)
             );
         }
         Bud_table.setItems(Bud_list);
@@ -65,7 +60,7 @@ public class budget_scene implements Initializable{
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "oracle");
 		
-        PreparedStatement p = con.prepareStatement("select * from budget;");
+        PreparedStatement p = con.prepareStatement("select * from budget where user_id ="+AlertConnector.user+";");
         ResultSet rs = p.executeQuery();
         System.out.println("printing now");
         while(rs.next()){
@@ -73,7 +68,6 @@ public class budget_scene implements Initializable{
             int limit = rs.getInt("elimit");
             System.out.println(limit+"\t\t"+categ);
             Bud_values.add(new Budget(categ, limit));
-            System.out.println("obj added");
         }
 		con.close();
     }

@@ -108,7 +108,7 @@
                               <Font name="Dubai Regular" size="14.0" />
                            </font>
                         </MenuButton>
-                        <Label layoutX="13.0" layoutY="144.0" prefHeight="41.0" prefWidth="194.0" text="Savings In August:" textFill="SLATEBLUE">
+                        <Label layoutX="13.0" layoutY="144.0" prefHeight="41.0" prefWidth="194.0" text="Your Savings :" textFill="SLATEBLUE">
                            <font>
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
@@ -124,7 +124,7 @@
                         </MenuButton>
                         <TableView fx:id="saving_table" layoutX="23.0" layoutY="209.0" prefHeight="495.0" prefWidth="616.0">
                           <columns>
-                            <TableColumn fx:id="save_categ" prefWidth="291.20002138614655" text="Category" />
+                            <TableColumn fx:id="save_categ" prefWidth="291.20002138614655" text="Date" />
                             <TableColumn fx:id="save_saving" prefWidth="321.6000061035156" text="Savings" />
                           </columns>
                         </TableView>
