@@ -36,17 +36,17 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Label>
-                        <Button alignment="CENTER" layoutX="21.0" layoutY="305.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="22.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" layoutX="3.0" layoutY="368.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="4.0" layoutY="374.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
-                        <MenuButton alignment="CENTER" layoutX="27.0" layoutY="240.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd;" text="Statistics" textFill="WHITE" AnchorPane.leftAnchor="27.0">
+                        <MenuButton alignment="CENTER" layoutX="21.0" layoutY="255.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd;" text="Statistics" textFill="WHITE" AnchorPane.leftAnchor="21.0">
                            <items>
                               <MenuItem mnemonicParsing="false" text="Bar-Charts" />
                               <MenuItem mnemonicParsing="false" text="Pie-Charts" />
@@ -55,12 +55,12 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </MenuButton>
-                        <Button alignment="CENTER" layoutX="24.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="22.0" layoutY="193.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" layoutX="21.0" layoutY="128.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: #6a5acd;" text="Transaction" textFill="#dbdbdb" underline="true">
+                        <Button alignment="CENTER" layoutX="21.0" layoutY="138.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: #6a5acd;" text="Transaction" textFill="#dbdbdb" underline="true">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
@@ -93,7 +93,7 @@
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
                         </Label>
-                        <Button layoutX="356.0" layoutY="467.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Save edits" textFill="WHITE">
+                        <Button layoutX="356.0" layoutY="467.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Update" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="24.0" />
                            </font>

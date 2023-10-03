@@ -86,13 +86,13 @@
                                 <items>
                                   <AnchorPane maxHeight="720.0" maxWidth="600.0" minHeight="0.0" minWidth="550.0" prefHeight="160.0" prefWidth="550.0" style="-fx-background-color: #ffffff;">
                                        <children>
-                                          <TableView layoutX="21.0" layoutY="100.0" prefHeight="308.0" prefWidth="503.0">
+                                          <TableView fx:id="Bud_table" layoutX="21.0" layoutY="100.0" prefHeight="308.0" prefWidth="503.0">
                                             <columns>
-                                              <TableColumn minWidth="0.0" prefWidth="250.66666793823242" text="CATEGORY" />
-                                              <TableColumn minWidth="0.0" prefWidth="251.3333740234375" text="EXPENSE LIMIT" />
+                                              <TableColumn fx:id="Bud_Categ" minWidth="0.0" prefWidth="250.66666793823242" text="CATEGORY" />
+                                              <TableColumn fx:id="Bud_Limit" minWidth="0.0" prefWidth="251.3333740234375" text="EXPENSE LIMIT" />
                                             </columns>
                                           </TableView>
-                                          <Button alignment="CENTER" layoutX="349.0" layoutY="522.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd #6a5acd;" text="Add Category" textFill="WHITE">
+                                          <Button alignment="CENTER" layoutX="349.0" layoutY="522.0" mnemonicParsing="false" onAction="#switchToCateg" style="-fx-background-color: #6a5acd #6a5acd;" text="Add Category" textFill="WHITE">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
