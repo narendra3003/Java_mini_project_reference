@@ -65,12 +65,12 @@ public class budget_scene implements Initializable{
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "oracle");
 		
-        PreparedStatement p = con.prepareStatement("select * from transaction_category;");
+        PreparedStatement p = con.prepareStatement("select * from budget;");
         ResultSet rs = p.executeQuery();
         System.out.println("printing now");
         while(rs.next()){
-			String categ = rs.getString("categoryname");
-            int limit = rs.getInt("categLimit");
+			String categ = rs.getString("category_name");
+            int limit = rs.getInt("elimit");
             System.out.println(limit+"\t\t"+categ);
             Bud_values.add(new Budget(categ, limit));
             System.out.println("obj added");

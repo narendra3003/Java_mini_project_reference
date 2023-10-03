@@ -114,10 +114,10 @@ public class Trans_Scene implements Initializable{
         ResultSet rs = p.executeQuery();
         System.out.println("printing now");
         while(rs.next()){
-            String type = rs.getString("description");
+            String type = rs.getString("transactiontype");
 			String date = rs.getString("transactiondate");
 			int amt = rs.getInt("amount");
-			String categ = rs.getString("Ecategory_id");
+			String categ = rs.getString("categoryname");
             System.out.println(type+"\t\t"+date+"\t\t"+amt+"\t\t"+categ);
             values.add(new Transactions(type, amt, categ, date));
             System.out.println("obj added");

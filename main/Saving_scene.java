@@ -69,8 +69,8 @@ public class Saving_scene implements Initializable{
         ResultSet rs = p.executeQuery();
         System.out.println("printing now");
         while(rs.next()){
-			String categ = rs.getString("category_id");
-            int saving = rs.getInt("amt");
+			String categ = rs.getString("saving_id");
+            int saving = rs.getInt("amount");
             System.out.println(saving+"\t\t"+categ);
             save_values.add(new saving(categ, saving));
             System.out.println("obj added");
