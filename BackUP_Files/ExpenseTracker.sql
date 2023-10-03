@@ -1,3 +1,4 @@
+drop database exp_tracker;
 create database Exp_Tracker;
 use Exp_Tracker;
 
@@ -13,10 +14,8 @@ insert into transactions values(401,'transaction details','2023-08-17',40000,301
 create table Transaction_category(category_id int(2),categoryname varchar(20),description varchar(50), categLimit int(10));
 insert into transaction_category values(201,'xyz','Online payment', 50000),(202,'abc','Offline payment', 20000);
 
-create table Savings(saving_id int(2)primary key,description varchar(50),savingsdate DATE,category_id int(2),User_id int(2),foreign key(User_id) references User(User_id));
-insert into savings values(101,'Details','2023-09-18',201,101),(102,'Other details','2023-09-17',202,102);
+create table Savings(saving_id int(2)primary key,description varchar(50),savingsdate DATE,category_id int(2),User_id int(2), amt int(7),foreign key(User_id) references User(User_id));
+insert into savings values(101,'Details','2023-09-18',201,101, 2000),(102,'Other details','2023-09-17',202,102, 6000);
 
 create table budget(budget_id int(2),amount int(4),Btime TIME,category_id int(2),user_id int(2));
 insert into budget values(501,70000,'15:30:00',201,101),(502,75000,'56:30:00',202,102);
-
-drop database exp_tracker;
