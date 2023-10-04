@@ -17,6 +17,15 @@ public class AlertConnector {
 	    	// show the dialog
 	    	a.show();
 	    }
+	public static void wrongSign()
+	    {
+	    	// set alert type
+	    	a.setAlertType(AlertType.ERROR);
+            // content to show
+            a.setContentText("Confirm with same password");
+	    	// show the dialog
+	    	a.show();
+	    }
     public static boolean checkLogin1(String name, String pass) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
 		// connecting database
 		Class.forName("com.mysql.jdbc.Driver");

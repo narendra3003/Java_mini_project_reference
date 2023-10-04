@@ -2,8 +2,8 @@ drop database exp_tracker;
 create database Exp_Tracker;
 use Exp_Tracker;
 
-create table User(User_id int(2)primary key,Username varchar(20),Password varchar(20));
-insert into User values(101,'Narendra','Tejas30'),(102,'Sanchita','Sanchi41');
+create table User(User_id int(2) auto_increment primary key,Username varchar(20),Password varchar(20)) auto_increment=101;
+insert into User (Username, Password) values('Narendra','Tejas30'),('Sanchita','Sanchi41');
 
 create table Expense_category(Ecategory_id int(2)primary key,Ecategory_name varchar(20),user_id int (2),foreign key (user_id) references User(user_id));
 insert into Expense_category values(301,'Education','101'),(302,'Transportation','102');
