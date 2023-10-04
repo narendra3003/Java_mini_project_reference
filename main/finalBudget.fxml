@@ -101,12 +101,12 @@
                                     </AnchorPane>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0">
                                        <children>
-                                          <Button alignment="CENTER" layoutX="202.0" layoutY="522.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd #6a5acd;" text="Apply Changes" textFill="WHITE">
+                                          <Button alignment="CENTER" layoutX="202.0" layoutY="522.0" mnemonicParsing="false" onAction="#ApplyChanges" style="-fx-background-color: #6a5acd #6a5acd;" text="Apply Changes" textFill="WHITE">
                                              <font>
                                                 <Font name="Dubai Regular" size="24.0" />
                                              </font>
                                           </Button>
-                                          <TextField layoutX="142.0" layoutY="130.0" promptText="Category name">
+                                          <TextField fx:id="newBudCateg" layoutX="142.0" layoutY="130.0" promptText="Category name">
                                              <font>
                                                 <Font name="Dubai Regular" size="12.0" />
                                              </font></TextField>
@@ -115,7 +115,7 @@
                                                 <Font name="Dubai Regular" size="20.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="142.0" layoutY="304.0" promptText="Limit for a Month">
+                                          <TextField fx:id="newBudLimit" layoutX="142.0" layoutY="304.0" promptText="Limit for a Month">
                                              <font>
                                                 <Font name="Dubai Regular" size="12.0" />
                                              </font></TextField>
