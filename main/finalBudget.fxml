@@ -24,7 +24,7 @@
                         <Font name="Dubai Regular" size="26.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" layoutX="28.0" layoutY="64.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd;" text="MENU" textFill="WHITE" underline="true">
+                  <Button alignment="CENTER" layoutX="28.0" layoutY="64.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd;" text="MENU" textFill="#dbdbdb" underline="true">
                      <font>
                         <Font name="Dubai Regular" size="26.0" />
                      </font>
@@ -124,7 +124,7 @@
                                                 <Font name="Dubai Regular" size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label alignment="CENTER" layoutX="56.0" layoutY="22.0" prefHeight="44.0" prefWidth="297.0" style="-fx-background-color: #6a5acd;" text="To Edit The Budget :" textFill="WHITE">
+                                          <Label alignment="CENTER" prefHeight="44.0" prefWidth="432.0" style="-fx-background-color: #6a5acd;" text="To Edit The Budget :" textFill="WHITE">
                                              <font>
                                                 <Font name="Dubai Regular" size="24.0" />
                                              </font>
