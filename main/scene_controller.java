@@ -102,6 +102,10 @@ public class scene_controller {
         String signpass2 = tfSignPass1.getText();
         int status =0;
         if(signpass.compareTo(signpass2)==0){
+            if((signUser.length()==0)||(signpass.length()==0)){
+                AlertConnector.Handle2();
+                return;
+            }
             Class.forName("com.mysql.jdbc.Driver");
 		    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
             PreparedStatement ps = con.prepareStatement("insert into User (Username, Password) values('"+signUser+"', '"+signpass+"');");
@@ -109,6 +113,9 @@ public class scene_controller {
             switchToLoginPage(event);
             con.close();
 
+        }
+        else if((signUser.length()==0)||(signpass.length()==0)){
+            AlertConnector.Handle2();
         }
         else{
             AlertConnector.wrongSign();

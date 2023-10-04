@@ -22,7 +22,16 @@ public class AlertConnector {
 	    	// set alert type
 	    	a.setAlertType(AlertType.ERROR);
             // content to show
-            a.setContentText("Confirm with same password");
+            a.setContentText("Confirm with same password ?");
+	    	// show the dialog
+	    	a.show();
+	    }
+	public static void Handle2()
+	    {
+	    	// set alert type
+	    	a.setAlertType(AlertType.ERROR);
+            // content to show
+            a.setContentText("Invalid Username or Password !");
 	    	// show the dialog
 	    	a.show();
 	    }

@@ -128,11 +128,6 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <Button layoutX="686.0" layoutY="643.0" mnemonicParsing="false" onAction="#switchToCateg" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Add New Category" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="19.0" />
-                           </font>
-                        </Button>
                      </children>
                   </AnchorPane>
                </children>
