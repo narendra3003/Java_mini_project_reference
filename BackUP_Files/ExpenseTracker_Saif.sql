@@ -50,7 +50,7 @@ CREATE TABLE transactions (
 ) AUTO_INCREMENT=401;
 
 -- Insert expense transactions
-INSERT INTO transactions (transactiondate, amount, transactiontype, categoryname, category_id, user_id) VALUES
+INSERT INTO transactions ( transactiondate, amount, transactiontype, categoryname, category_id, user_id) VALUES
     ('2023-08-17', 40000, 'Expense', 'School', 501, 101),
     ('2023-08-18', 20000, 'Expense', 'Food', 502, 102),
     ('2023-09-20', 2500, 'Expense', 'Groceries', 504, 102),

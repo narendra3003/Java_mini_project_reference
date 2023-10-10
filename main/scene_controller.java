@@ -1,21 +1,28 @@
 package main;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
-public class scene_controller {
+public class scene_controller implements Initializable {
+    @FXML
+    private Label Welcome=new Label("Welcome user");
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -54,13 +61,6 @@ public class scene_controller {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToEditTrans(ActionEvent event) throws IOException{        // to switch the scene to edit transaction
-        root = FXMLLoader.load(getClass().getResource("finalEditTrans.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
     @FXML
     public void switchToBL(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("finalBorrow&Lend.fxml"));
@@ -85,7 +85,7 @@ public class scene_controller {
         stage.setScene(scene);
         stage.show();
     }
-    
+
     @FXML
     private TextField tfSignUser;
 
@@ -107,7 +107,7 @@ public class scene_controller {
                 return;
             }
             Class.forName("com.mysql.jdbc.Driver");
-		    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
             PreparedStatement ps = con.prepareStatement("insert into User (Username, Password) values('"+signUser+"', '"+signpass+"');");
             status = ps.executeUpdate();//to execute that statement
             switchToLoginPage(event);
@@ -118,9 +118,9 @@ public class scene_controller {
             AlertConnector.Handle2();
         }
         else{
-            AlertConnector.wrongSign();
+            AlertConnector.wrongPass();
         }
-        if(status!=0){ 
+        if(status!=0){
             System.out.println("database was connected");
             System.out.println("record was inserted");
         }
@@ -138,10 +138,15 @@ public class scene_controller {
         // checks the login is valid or not
         String email = tfEmail.getText();
         String pass = tfPass.getText();
-        System.out.println(AlertConnector.checkLogin1(email, pass));
+//        System.out.println(AlertConnector.checkLogin1(email, pass));
         if(AlertConnector.checkLogin1(email, pass)){
             switchToDashBoard(event);
             System.out.println("true");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Welcome.setText("Welcome, "+ AlertConnector.username+" !");
     }
 }

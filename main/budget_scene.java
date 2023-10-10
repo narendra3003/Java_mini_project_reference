@@ -31,7 +31,7 @@ public class budget_scene implements Initializable{
     private Scene scene;
     private Parent root;
     public static ArrayList<Budget> Bud_values= new ArrayList<Budget>();
-    
+
     @FXML
     private TableView<Budget> Bud_table;
 
@@ -47,6 +47,33 @@ public class budget_scene implements Initializable{
     @FXML
     private TextField newBudLimit;
 
+    int index = -1;
+
+    @FXML
+    void getSelected(javafx.scene.input.MouseEvent event){
+        index = Bud_table.getSelectionModel().getSelectedIndex();
+        if(index<=-1){
+            return;
+        }
+        newBudCateg.setText(Bud_Categ.getCellData(index).toString());
+        newBudLimit.setText(Bud_Limit.getCellData(index).toString());
+    }
+
+    public void deleteBud(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        Statement stmt = con.createStatement();
+        String q4 = "delete from budget where category_name = ?" ;
+        try{
+            PreparedStatement pst = con.prepareStatement(q4);
+            pst.setString(1, newBudCateg.getText());
+            pst.execute();
+            switchToBudget(event);
+
+        }catch(Exception e){}
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         Bud_Categ.setCellValueFactory(new PropertyValueFactory<Budget, String>("categ"));
@@ -58,7 +85,7 @@ public class budget_scene implements Initializable{
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException | IOException e) {
             System.out.println("error occured ="+e);
             Bud_list = FXCollections.observableArrayList(
-                new Budget("Error", 0)
+                    new Budget("Error", 0)
             );
         }
         Bud_table.setItems(Bud_list);
@@ -72,43 +99,57 @@ public class budget_scene implements Initializable{
         switchToBudget(event);
     }
     public static void changeData(String categ, String limit) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
-		try
-		{
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-			Statement stmt = con.createStatement();
-		
-			// Updating database
-			String q1 = "UPDATE budget set category_name = '" +categ+ "', elimit = "+ limit+" WHERE category_name = '" + categ + "' and user_id ="+AlertConnector.user+";"  ;
-			int x = stmt.executeUpdate(q1);
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+            Statement stmt = con.createStatement();
 
-			if (x > 0)
-				System.out.println("Expenses Updated");		
-			else		
-				System.out.println("ERROR OCCURRED :(");
-			
-			con.close();
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-		}
+            // Updating database
+            String q1 = "UPDATE budget set category_name = '" +categ+ "', elimit = "+ limit+" WHERE category_name = '" + categ + "' and user_id ="+AlertConnector.user+";"  ;
+            int x = stmt.executeUpdate(q1);
+
+            if (x > 0)
+                System.out.println("Expenses Updated");
+            else
+                System.out.println("ERROR OCCURRED :(");
+
+            con.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
     }
     private void giveBudget() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
         Bud_values.clear();
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "oracle");
-		
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+
         PreparedStatement p = con.prepareStatement("select * from budget where user_id ="+AlertConnector.user+";");
         ResultSet rs = p.executeQuery();
         System.out.println("printing now");
         while(rs.next()){
-			String categ = rs.getString("category_name");
+            String categ = rs.getString("category_name");
             int limit = rs.getInt("elimit");
             System.out.println(limit+"\t\t"+categ);
             Bud_values.add(new Budget(categ, limit));
         }
-		con.close();
+        con.close();
+    }
+    @FXML
+    void addCateg(ActionEvent event)throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
+        String categ = newBudCateg.getText();
+        String limit = newBudLimit.getText();
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_id, category_name, user_id) ( "+limit+", 501, '"+categ+"' ,"+AlertConnector.user+");");
+        int status = ps.executeUpdate();//to execute that statement
+        if (status==0){
+            System.out.println("wrong");
+        }
+        switchToTransaction(event);
+        con.close();
     }
     @FXML
     public void switchToTransaction(ActionEvent event) throws IOException{        // to switch the scene to transaction
@@ -150,5 +191,13 @@ public class budget_scene implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
-}
 
+    @FXML
+    public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+        root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+}

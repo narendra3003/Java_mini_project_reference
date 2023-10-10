@@ -6,6 +6,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ChartsTry",
+            "request": "launch",
+            "mainClass": "ChartsTry",
+        },
+        {
+            "type": "java",
             "name": "AlertConnector",
             "request": "launch",
             "mainClass": "main.AlertConnector",
